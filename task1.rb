@@ -1,11 +1,15 @@
-# 1 version
-new_mass = Array.new(4) { Array.new(4, 20*rand-10) }
+class QuadraMatrix
+  def initialize n=4
+    @new_mass = []
+    n.times do |row|
+      @new_mass[row] = []
+      n.times do |column|
+        @new_mass[row][column] = 20*rand-10
+      end
+    end
+  end
 
-# 2 version
-new_mass=[]
-for row in 0...4
-	new_mass[row] = []
-	for column in 0...4
-		new_mass[row][column] = 20*rand-10
-	end
+  def new_mass
+    @new_mass
+  end
 end
